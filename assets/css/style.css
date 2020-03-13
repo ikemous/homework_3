@@ -1,0 +1,14 @@
+/* 
+    textarea tag
+    Purpose: Make the text in text area centered 
+            and make text area un editable
+*/
+textarea{
+
+    padding-top: 40px;
+    padding-bottom: 40px;
+    text-align: center;
+    font-size: 75px;
+    resize: none;
+
+}
