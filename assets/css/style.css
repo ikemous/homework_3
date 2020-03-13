@@ -1,14 +1,22 @@
 /* 
     textarea tag
     Purpose: Make the text in text area centered 
-            and make text area un editable
+            and make text area un-resizeable
 */
 textarea{
 
     padding-top: 40px;
     padding-bottom: 40px;
     text-align: center;
-    font-size: 75px;
+    font-size: auto;
     resize: none;
+    
+}
 
+/* 
+    section tag
+    Purpose: seperate Each Section
+*/
+section{
+    padding-bottom: 20px;
 }
