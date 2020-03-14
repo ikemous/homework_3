@@ -46,27 +46,28 @@ function createPassword()
         {
             case letters:
                 //create random number to pick from letter list
-                let randNum = Math.floor(Math.random() * 25)
+                let randNum = Math.floor(Math.random() * 25);
 
                 //Create a random number for upper and lower case
-                let isUpper = Math.floor(Math.random() * 2);
+                let isUpper = checkForUpperOrLower();
 
                 //0 = lower
-                if(isUpper == 0)
+                if(isUpper === false)
                 {
+                    alert(letters[randNum] + "is lower");
                     //Add lower case letter to password string
                     password = password + letters[randNum];
                 }
                 //1 = upper
                 else
                 {
+                    alert(letters[randNum] + "is upper");
                     //Add upper case letter to password string
                     password = password + letters[randNum].toUpperCase();
                 }
                 //Get out of the case
                 break;
             case specChars:
-                
                 // code block
                 break;
             case numbers:
@@ -78,7 +79,6 @@ function createPassword()
     }
     
     alert(password);
-    console.log(password);
 }
 
 
@@ -116,16 +116,15 @@ function checkForUpperOrLower()
 {
     //Create a random number for upper and lower case
     let isUpper = Math.floor(Math.random() * 2);
+
     //0 = lower
     if(isUpper == 0)
     {
-        //Add lower case letter to password string
-        password = password + letters[randNum];
+        return false;
     }
     //1 = upper
     else
     {
-        //Add upper case letter to password string
-        password = password + letters[randNum].toUpperCase();
+        return true;
     }
 }
