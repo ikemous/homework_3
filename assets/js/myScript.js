@@ -4,7 +4,7 @@ let specChars = ['!','?','@','#','$','%','^','&','*','(',')','<','>','~','`'];
 let numbers= ['0','1','2','3','4','5','6','7','8','9'];
 let allChoices = [letters, specChars, numbers];//All arrays in one list
 
-let password;
+let password = "";
 let passLength;
 let MIN_LENGTH = 8;
 let MAX_LENGTH = 128;
@@ -34,14 +34,51 @@ function createPassword()
     //Start Generating password
     for(let i = 0; i < passLength; i++)
     {
+        //Random number to choose 
+        let ranNum = Math.floor(Math.random() * 3);
+        
         //Choose which choice to pick
 
-        //if letter choose upper or lower chase
 
-        //
+        alert(allChoices[ranNum]);
+        //Case Statements To check each choice
+        switch(allChoices[ranNum]) 
+        {
+            case letters:
+                //create random number to pick from letter list
+                let randNum = Math.floor(Math.random() * 25)
+
+                //Create a random number for upper and lower case
+                let isUpper = Math.floor(Math.random() * 2);
+
+                //0 = lower
+                if(isUpper == 0)
+                {
+                    //Add lower case letter to password string
+                    password = password + letters[randNum];
+                }
+                //1 = upper
+                else
+                {
+                    //Add upper case letter to password string
+                    password = password + letters[randNum].toUpperCase();
+                }
+                //Get out of the case
+                break;
+            case specChars:
+                
+                // code block
+                break;
+            case numbers:
+                // code block
+                break;
+            default:
+              // code block
+          }
     }
     
-
+    alert(password);
+    console.log(password);
 }
 
 
@@ -73,4 +110,22 @@ function checkNumberInput(length)
     //User input isnt inbetween the parameters
     return false;
 
+}
+
+function checkForUpperOrLower()
+{
+    //Create a random number for upper and lower case
+    let isUpper = Math.floor(Math.random() * 2);
+    //0 = lower
+    if(isUpper == 0)
+    {
+        //Add lower case letter to password string
+        password = password + letters[randNum];
+    }
+    //1 = upper
+    else
+    {
+        //Add upper case letter to password string
+        password = password + letters[randNum].toUpperCase();
+    }
 }
