@@ -2,11 +2,13 @@
 let letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];///Possible Letters
 let specChars = ['!','?','@','#','$','%','^','&','*','(',')','<','>','~','`'];//Possible Special Characters
 let numbers = ['0','1','2','3','4','5','6','7','8','9'];//possible numbers for password
+
 // let allChoices = [letters, specChars, numbers];//All arrays in one list
-let allChoices ;//All arrays in one list
+let allChoices ;//used to store all choices in one list
 
 //Variables used by the functions below
-let password = "";//Password that is generated
+let password;//Password that is generated
+let validInput;//Used To Check pass length input
 let passLength;//Users length for password
 let MIN_LENGTH = 8;//Constant for Minimum password length
 let MAX_LENGTH = 128;//Constant for Maximum password length
@@ -27,20 +29,18 @@ function createPassword()
 
     //Generate possible password options
     generateChoices();
-    console.log(allChoices);
 
-    //Bool to confirm users input is correct
-    let validInput = false;    
+    //Grab Password Length from the HTML Page
+    passLength = document.getElementById("passLengthTextBox").value;
 
-    //Make User Input A Number
-    while(validInput === false)
+    //Check User Input
+    validInput = checkNumberInput(passLength);
+
+    //Check if input is valid
+    if(validInput === false)
     {
-
-        //Ask User How Long They want Thier Password to Be
-        passLength = prompt("How Long Will Your Password Need To Be? (8-126 Characters)");
-
-        //Check User Input
-        validInput = checkNumberInput(passLength);
+        //Get out of the function if it isn't valid
+        return;
     }
 
     //Turn String to int
@@ -52,6 +52,7 @@ function createPassword()
 
         //Random Character is created
         let newChar = randomCharacter();
+
         //Check if character wasnt in any array list
         if(newChar == null)
         {
@@ -62,6 +63,7 @@ function createPassword()
             //Get Out Of The For Loop
             break;
         }
+
         //Add random character to password
         password = password + newChar;
     }
@@ -70,6 +72,7 @@ function createPassword()
     document.getElementById("passText").innerText = password;
 
 }//End createPassword()
+
 
 //  generateChoices()
 //  Purpose: To generate the array to hold arrays of character choices
@@ -125,7 +128,6 @@ function randomCharacter()
          case letters:
             //create random number to pick from letter list
             randNum = Math.floor(Math.random() *letters.length);
-            
             //Upper Letter
             if(checkForUpperOrLower())
             {
@@ -171,29 +173,25 @@ function randomCharacter()
 function checkNumberInput(length)
 {
 
-     //Checks To See If User Input isn't a number
-     if(isNaN(length))
-     {
-         //Tell User That They Suck!
-         alert("Input Wasn't a number");
-     }
-     //User Input Is A
-     else
-     {
-         //Turn User Input Into A Number
-         length = parseInt(length);
-         
-         //Check if User Input is inbwetween parameters
-         if(length >= MIN_LENGTH && length <= MAX_LENGTH)
-         {
-            return true;
-         }
-     }
+    //Checks To See If User Input isn't a number
+    if(isNaN(length))
+    {
+       //Tell User That They Suck!
+       alert("Input Wasn't a number");
+    }
+    //User Input Is A number
+    else if(length >= MIN_LENGTH && length <= MAX_LENGTH)
+    {
+        //Turn User Input Into A Number
+        length = parseInt(length);
+        //input is a number
+        return true;
+    }
 
     //Tell User they Suck!
     alert("Input must be between 8 and 128 characters")
     
-    //User input isnt inbetween the parameters
+    //input isnt a number
     return false;
 //End checkNumberInput()
 }
@@ -219,4 +217,22 @@ function checkForUpperOrLower()
         //Return True
         return true;
     }
+
 }//End checkForUpperOrLower()
+
+//  copyToClipBoard()
+//  Purpose: To determine if the letter is going to be upper or lower
+//  Parameters: None
+//  Returns: boolean of true or false
+function copyToClipBoard()
+{
+    //Obtain Text From text area
+    let clippedText = document.getElementById("passText");
+
+    //Select The Text
+    clippedText.select();
+
+    //Copy The Text To Clipboard
+    document.execCommand("copy");
+
+}

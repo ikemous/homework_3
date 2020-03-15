@@ -18,7 +18,7 @@
     <meta name="description" content="Website used to generate a random Password" />
     <meta name="keywords" content="Random, Password, Generator, Security, Ike, Ikemous, Barranco, Portfolio, Facebook, Github" />
     <meta name="author" content="Ikemous" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"  />
     <!-- End Meta Data -->
 
     <!-- Title Of The Home Page-->
@@ -57,10 +57,10 @@
 
 
     <!-- Page Container For Website -->
-    <div class="container">
+    <main class="container" style="padding-top: 50px;">
 
         <!-- Row To Hold All Stuff For The Password Generator -->
-        <section class="row">
+        <section class="row" style="padding-left: 10px; padding-right: 10px;">
 
             <section class="jumbotron col-xl-12">
 
@@ -77,20 +77,121 @@
 
                 </section>
 
-                <!-- Row To Contain Information Of checkboxes -->
+                <!-- Row To Show Password Guidelines -->
                 <section class="row">
-                    <h3 class="col-sm-4 text-center">Letters</h3>
-                    <h3 class="col-sm-4 text-center">Numbers</h3>
-                    <h3 class="col-sm-4 text-center">Symbols</h3>
+                    
+                    <!-- Safe Password Guidelines -->
+                    <article class="col-md-4"> 
+
+                        <h2>How It Works</h2>
+
+                    </article>
+
+                    <article class="col-md-8"> 
+                        <!-- Password Rules To appear To User -->
+                        <ul>
+
+                            <!-- Lists rules of the site -->
+                            <li>Type In A Length From 8-128 In The First Box</li>
+                            <li>Check At Least One Box In The Character Options</li>
+                            <li>Ask The Jolley Wizard For Help By Clicking The Button</li>
+                            <li>Ask The Jolley Wizard For To Copy Your Password</li>
+                            <li>Repeat As Needed/Wanted :)</li>
+
+                        </ul>
+
+                    </article>
+
+                </section>
+                <!-- Row To Show Password Guidelines -->
+                <section class="row">
+                    
+                    <!-- Safe Password Guidelines -->
+                    <article class="col-md-4"> 
+
+                        <h2>Password Guidelines</h2>
+
+                    </article>
+
+                    <article class="col-md-8"> 
+                        <!-- Password Rules To appear To User -->
+                        <ul>
+
+                            <!-- List of safe practices -->
+                            <li>Has At least 8 or more characters</li>
+                            <li>Use uppercase and lowercase letters</li>
+                            <li>Use at least numbers</li>
+                            <li>Use at least one special character, e.g., ! @ # ?</li>
+
+                        </ul>
+
+                    </article>
+
+                </section>
+
+
+
+                <!-- Row To Contain Password Text -->
+                <section class="row">
+                    <h3>PASSWORD LENGTH: </h3>
+                </section>
+
+                <!-- Row To Contain userInput -->
+                <section class="row">
+
+                    <!-- Textbox to contain user input -->
+                    <input type="text" class="col-sm-12 " placeholder="8 and 128 Characters" id="passLengthTextBox" name="passTextBox" style="padding-left: 90px;" />  
+                    <!-- Label For Letters Choice -->
+                    <label for="passTextBox" style="position:absolute; padding-left: 5px; padding-top: 2px;">Characters:</label>
+
+                </section>
+
+                <!-- Row To Contain Password Text -->
+                <section class="row">
+                    <h3>CHARACTER OPTIONS: </h3>
                 </section>
 
                 <!-- Row To Contain Checkboxes -->
                 <section class="row">
-                    <input type="checkbox" class="col-sm-4" id="letterCheckBox" name="letterCheckBox" />
-                    <input type="checkbox" class="col-sm-4" id="numbersCheckBox" name="numbersChoice" />
-                    <input type="checkbox" class="col-sm-4" id="symbolsCheckBox" name="symbolsChoice" />
+
+                    <!-- Check box for letters choice -->
+                    <article class="col-sm-2">
+
+                        <!-- Label For Letters Choice -->
+                        <label for="lettersChoice">Letter: </label>
+                        <input type="checkbox" id="letterCheckBox" name="lettersChoice" />
+
+                    </article> 
+
+                    <!-- Check box for numebrs choice -->
+                    <article class="col-sm-2">
+
+                        <!-- Label For Numbers Choice -->
+                        <label for="numbersChoice">Number: </label>
+                        <input type="checkbox" id="numbersCheckBox" name="numbersChoice" />
+
+                    </article>
+
+                    <!-- Check box for symbols choice -->
+                    <article class="col-sm-2">
+
+                        <!-- Label for symbols choice -->
+                        <label for="symbolsChoice">Symbol: </label>
+                        <input type="checkbox" id="symbolsCheckBox" name="symbolsChoice" />
+
+                    </article>
+
+                    <!-- Empty For Spacing -->
+                    <article class="col-sm-6"></article>
+
                     
                 </section>
+
+                <!-- Row To Contain Password Text -->
+                <section class="row">
+                    <h3>PASSWORD RESULTS: </h3>
+                </section>
+
 
                 <!-- Row To Contain Password Text -->
                 <section class="row">
@@ -102,45 +203,39 @@
                 <!-- Row To Contain Button For Generating Random Password -->
                 <section class="row">
 
-                    <!-- Button To Generate Password -->
-                    <button type="button" class="btn btn-primary btn-lg btn-block seperateSection" onclick="createPassword()")>Block level button</button>
+                    <div class="col-xl-2"></div>
+
+                    <div class="col-xl-8">
+                        <!-- Button To Generate Password -->
+                        <button type="button" class="btn btn-primary btn-lg btn-block seperateSection" onclick="createPassword()">O'l great jolley wizard, please create my password!</button>
+                    </div>
+
+                    <div class="col-xl-2"></div>
 
                 </section>
 
-                <!-- Row To Show Password Guidelines -->
+                <!-- Row To Contain Button For Generating Random Password -->
                 <section class="row">
-                    
-                    <!-- Safe Password Guidelines -->
-                    <article class="col-m-4"> 
 
-                        <h2>Password Guidlines</h2>
+                    <div class="col-xl-2"></div>
 
-                    </article>
+                    <div class="col-xl-8">
+                        <!-- Button To Generate Password -->
+                        <button type="button" class="btn btn-primary btn-lg btn-block seperateSection" onclick="copyToClipBoard()">O'l great jolley wizard, please copy my password!</button>
+                    </div>
 
-                    <article class="col-sm-8"> 
-                        <!-- Password Rules To appear To User -->
-                        <ul>
-
-                            <!-- List of safe practices -->
-                            <li>At least 8 or more characters</li>
-                            <li>Use uppercase and lowercase letters</li>
-                            <li>Use letters and numbers</li>
-                            <li>at least one special character, e.g., ! @ # ?</li>
-
-                        </ul>
-
-                    </article>
+                    <div class="col-xl-2"></div>
 
                 </section>
 
+                
 
-
+                
             </section>
-
 
         </section>
 
-    </div>
+    </main>
     
     <!-- Link my javascript -->
     <script rel="script" type="text/javascript" src="./assets/js/myScript.js"></script>

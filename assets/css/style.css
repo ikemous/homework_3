@@ -28,3 +28,14 @@ section{
 ul li{
     list-style: decimal;
 }
+
+/* 
+style="height:30px; width:30px;"
+*/
+input[type="checkbox"]
+{
+    /* Update Height */
+    height:30px; 
+    /* Update Width */
+    width:30px;
+}
