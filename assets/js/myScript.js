@@ -3,13 +3,13 @@ let letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','
 let specChars = ['!','?','@','#','$','%','^','&','*','(',')','<','>','~','`'];//Possible Special Characters
 let numbers = ['0','1','2','3','4','5','6','7','8','9'];//possible numbers for password
 // let allChoices = [letters, specChars, numbers];//All arrays in one list
-let allChoices  ;//All arrays in one list
+let allChoices ;//All arrays in one list
 
 //Variables used by the functions below
 let password = "";//Password that is generated
 let passLength;//Users length for password
-let MIN_LENGTH = 8;//Minimum password length
-let MAX_LENGTH = 128;//Maximum password length
+let MIN_LENGTH = 8;//Constant for Minimum password length
+let MAX_LENGTH = 128;//Constant for Maximum password length
 
 //Variables for checkboxes
 let lettersChecked;//For the letters checkbox
@@ -50,12 +50,20 @@ function createPassword()
     for(let i = 0; i < passLength; i++)
     {
 
-        //Random number to choose 
-        // let randNum = Math.floor(Math.random() * 3)
-        let randNum = Math.floor(Math.random() * (allChoices.length));
-        
+        //Random Character is created
+        let newChar = randomCharacter();
+        //Check if character wasnt in any array list
+        if(newChar == null)
+        {
+            //Tell user they suck!
+            alert("You Need to have at least 1 box checked!!");
+            //Tell the User They Suck Again!
+            password = "Please Check at least one box"
+            //Get Out Of The For Loop
+            break;
+        }
         //Add random character to password
-        password = password + randomCharacter(randNum);
+        password = password + newChar;
     }
 
     //Reset the text of the text area
@@ -63,61 +71,63 @@ function createPassword()
 
 }//End createPassword()
 
-
+//  generateChoices()
+//  Purpose: To generate the array to hold arrays of character choices
+//  Parameters: None
+//  Returns: None
 function generateChoices()
 {
+    //Make all choices an empty array
     allChoices = [];
     //Check if letter check box is checked
     lettersChecked = document.getElementById("letterCheckBox").checked;
-    console.log(lettersChecked);
     //Check if numbers check box is checked  
     numbersChecked = document.getElementById("numbersCheckBox").checked;
-    console.log(numbersChecked);
     //Check if symbols check box is checked
     symbolsChecked = document.getElementById("symbolsCheckBox").checked;
-    console.log(symbolsChecked);
 
+    //Letters box was checked
     if(lettersChecked)
     {
+        //Add letters to the list of possible characters
         allChoices.push(letters);
     }
+    //Numbers box was checked
     if(numbersChecked)
     {
+        //Add numbers to the list of possible characters
         allChoices.push(numbers);
     }
+    //Symbols box was checked
     if(symbolsChecked)
     {
+        //Add symbols to the list of possible characters
         allChoices.push(specChars)
     }
 
-    console.log(allChoices);
-
-
-
-}
+}//End generateChoices()
 
 
 //  randomCharacter()
 //  Purpose: Generate a random character from all the choices
 //  Parameters: num variable for array choice
 //  Returns: character To add to password
-function randomCharacter(num)
+function randomCharacter()
 {
     //Temp Variables to store information
     let character;//Password Character
-    let randNum;//Store random number
+    let randNum = Math.floor(Math.random() * allChoices.length);//Store random number
 
      //Case Statements To check each choice
-     switch(allChoices[num]) 
+     switch(allChoices[randNum]) 
      {
          //Random chose letters
          case letters:
             //create random number to pick from letter list
-            randNum = Math.floor(Math.random() * 25);
-            //Create a random number for upper and lower case
-            let isUpper = checkForUpperOrLower();
+            randNum = Math.floor(Math.random() *letters.length);
+            
             //Upper Letter
-            if(isUpper)
+            if(checkForUpperOrLower())
             {
                //Add upper case letter to password string
               character = letters[randNum].toUpperCase();
@@ -133,7 +143,7 @@ function randomCharacter(num)
          //Random chose specChars
          case specChars:
             //create random number to pick from letter list
-            randNum = Math.floor(Math.random() * 14);
+            randNum = Math.floor(Math.random() * specChars.length);
             //Add the special character to the password
             character = specChars[randNum];
             //Get Out of here 
@@ -141,14 +151,13 @@ function randomCharacter(num)
          //Random Chose numbers
          case numbers:
             //create random number to pick from letter list
-            randNum = Math.floor(Math.random() * 9);
-            //Add number to password
+            randNum = Math.floor(Math.random() * numbers.length);
+             //Add number to password
             character = numbers[randNum];
             //Get out of here!!!
             break;
          default:
-             //Add astrix if password fails
-            character = "*";
+            return null;
        }
        //Return The Character For The Password
        return character;
