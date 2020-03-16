@@ -66,9 +66,16 @@ label[for="passTextBox"]
     padding-top: 2px;
 }
 
+legend{
+    width: auto;
+    background-color: lightblue;
+    padding: 5px;
+}
+
 .borderInput{
 
-    border: solid;
+    border: 5px solid blue;
     padding: 20px;
     border-color: lightblue;
+    width:100%;
 }

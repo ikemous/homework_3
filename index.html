@@ -130,20 +130,22 @@
 
                 </section>
 
-
-
-                <!-- Row To Contain Password Text -->
-                <section class="row">
-                    <h3>PASSWORD LENGTH: </h3>
-                </section>
-
                 <!-- Row To Contain userInput -->
                 <section class="row">
 
-                    <!-- Textbox to contain user input -->
-                    <input type="text" class="col-sm-12 " placeholder="8 and 128 Characters" id="passLengthTextBox" name="passTextBox" />  
-                    <!-- Label For Letters Choice -->
-                    <label for="passTextBox">Password Length:</label>
+                    <article class="col-sm-12">
+
+                        <fieldset class="borderInput">
+                            
+                            <legend>Desired Length</legend>
+                            <!-- Label For Letters Choice -->
+                            <label for="passTextBox">Password Length:</label>
+                            <!-- Textbox to contain user input -->
+                            <input type="text"  placeholder="8 and 128 Characters" id="passLengthTextBox" name="passTextBox" />  
+                        
+                        </fieldset>
+
+                    </article>
 
                 </section>
 
@@ -155,33 +157,36 @@
                 <!-- Row To Contain Checkboxes -->
                 <section class="row">
 
-                    <article class="col-sm-4">
+                    <fieldset class="borderInput">
 
-                        <!-- Label For Letters Choice -->
-                        <label for="checkBoxes">Letter: </label>
-                        <input type="checkbox" id="letterCheckBox" name="lettersChoice" />
+                        <article class="col-sm-4">
 
-                    </article> 
+                            <!-- Label For Letters Choice -->
+                            <label for="checkBoxes">Letter: </label>
+                            <input type="checkbox" id="letterCheckBox" name="lettersChoice" />
 
-                    <!-- Check box for numebrs choice -->
-                    <article class="col-sm-4">
+                        </article> 
 
-                        <!-- Label For Numbers Choice -->
-                        <label for="checkBoxes">Number: </label>
-                        <input type="checkbox" id="numbersCheckBox" name="numbersChoice" />
+                        <!-- Check box for numebrs choice -->
+                        <article class="col-sm-4">
 
-                    </article>
+                            <!-- Label For Numbers Choice -->
+                            <label for="checkBoxes">Number: </label>
+                            <input type="checkbox" id="numbersCheckBox" name="numbersChoice" />
 
-                    <!-- Check box for symbols choice -->
-                    <article class="col-sm-4">
+                        </article>
 
-                        <!-- Label f or symbols choice -->
-                        <label for="checkBoxes">Symbol: </label>
-                        <input type="checkbox" id="symbolsCheckBox" name="symbolsChoice" />
+                        <!-- Check box for symbols choice -->
+                        <article class="col-sm-4">
 
-                    </article>
+                            <!-- Label f or symbols choice -->
+                            <label for="checkBoxes">Symbol: </label>
+                            <input type="checkbox" id="symbolsCheckBox" name="symbolsChoice" />
 
-                    
+                        </article> 
+
+                    </fieldset>                 
+            
                 </section>
 
                 <!-- Row To Contain Password Text -->
@@ -225,9 +230,6 @@
 
                 </section>
 
-                
-
-                
             </section>
 
         </section>
