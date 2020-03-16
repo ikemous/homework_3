@@ -4,7 +4,7 @@ let specChars = ['!','?','@','#','$','%','^','&','*','(',')','<','>','~','`'];//
 let numbers = ['0','1','2','3','4','5','6','7','8','9'];//possible numbers for password
 
 // let allChoices = [letters, specChars, numbers];//All arrays in one list
-let allChoices ;//used to store all choices in one list
+let allChoices;//used to store all choices in one list
 
 //Variables used by the functions below
 let password;//Password that is generated
@@ -83,7 +83,7 @@ function generateChoices()
     //Make all choices an empty array
     allChoices = [];
     //Check if letter check box is checked
-    lettersChecked = document.getElementById("letterCheckBox").checked;
+    lettersChecked = document.getElementById("letterCheckBox").checked;//True or false
     //Check if numbers check box is checked  
     numbersChecked = document.getElementById("numbersCheckBox").checked;
     //Check if symbols check box is checked
@@ -99,7 +99,7 @@ function generateChoices()
     if(numbersChecked)
     {
         //Add numbers to the list of possible characters
-        allChoices.push(numbers);
+        allChoices.push(numbers)
     }
     //Symbols box was checked
     if(symbolsChecked)
@@ -161,6 +161,7 @@ function randomCharacter()
          default:
             return null;
        }
+       
        //Return The Character For The Password
        return character;
 }//end randomCharacter()
