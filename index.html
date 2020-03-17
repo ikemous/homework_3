@@ -60,9 +60,9 @@
     <main class="container">
 
         <!-- Row To Hold All Stuff For The Password Generator -->
-        <section class="row" style="padding-left: 10px; padding-right: 10px;">
+        <section class="row">
 
-            <section class="jumbotron col-xl-12">
+            <section class="col-xl-12">
 
                 <!-- Row To Contain header -->
                 <section class="row">
@@ -142,8 +142,6 @@
                             <label for="passTextBox">Password Length:</label>
                             <!-- Textbox to contain user input -->
                             <input type="text" placeholder="8 and 128 Characters" id="passLengthTextBox" name="passTextBox" />  
-                        
-                            <!-- oninvalid="alert('Must contain 6 or more characters');" pattern=".{6,}" -->
 
                         </fieldset>
 
@@ -157,7 +155,6 @@
                     <section class="col-sm-12">
 
                         <fieldset class="borderInput">
-
 
                             <legend>Character Choices</legend>
 
@@ -196,14 +193,18 @@
 
                 <!-- Row To Contain Password Text -->
                 <section class="row">
-                    <h3>PASSWORD RESULTS: </h3>
-                </section>
 
+                    <article class="col-sm-12">
 
-                <!-- Row To Contain Password Text -->
-                <section class="row">
+                        <fieldset class="borderInput text-center">
 
-                        <textarea class="col-xl-12" placeholder="Password Will Appear Here" id="passText" readonly></textarea>
+                            <legend>!Password Result!</legend>
+                           
+                            <textarea class="col-xl-12" placeholder="Password Will Appear Here" id="passText" readonly></textarea>
+
+                        </fieldset>
+
+                    </article>
 
                 </section>
 

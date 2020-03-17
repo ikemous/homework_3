@@ -10,8 +10,19 @@ textarea{
     text-align: center;
     font-size: auto;
     resize: none;
+    background-color: lightcoral;
+    border: none;
+    font-weight: bolder;
+    color: black;
+    
     
 }
+
+body{
+    
+    background-color: cyan;
+}
+
 
 main{
     padding-top: 50px;
@@ -81,6 +92,11 @@ legend{
     width: auto;
     background-color: lightblue;
     padding: 5px;
+    font-weight: bolder;
+}
+
+fieldset{
+    background-color: lightcoral;
 }
 
 .borderInput{
@@ -90,3 +106,10 @@ legend{
     border-color: lightblue;
     width:100%;
 }
+
+
+.jumbotron{
+    
+    background-color: cyan;
+}
+
