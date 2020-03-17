@@ -57,7 +57,7 @@
 
 
     <!-- Page Container For Website -->
-    <main class="container" style="padding-top: 50px;">
+    <main class="container">
 
         <!-- Row To Hold All Stuff For The Password Generator -->
         <section class="row" style="padding-left: 10px; padding-right: 10px;">
@@ -141,51 +141,56 @@
                             <!-- Label For Letters Choice -->
                             <label for="passTextBox">Password Length:</label>
                             <!-- Textbox to contain user input -->
-                            <input type="text"  placeholder="8 and 128 Characters" id="passLengthTextBox" name="passTextBox" />  
+                            <input type="text" placeholder="8 and 128 Characters" id="passLengthTextBox" name="passTextBox" />  
                         
+                            <!-- oninvalid="alert('Must contain 6 or more characters');" pattern=".{6,}" -->
+
                         </fieldset>
 
                     </article>
 
                 </section>
 
-                <!-- Row To Contain Password Text -->
-                <section class="row">
-                    <h3>CHARACTER OPTIONS: </h3>
-                </section>
-
                 <!-- Row To Contain Checkboxes -->
                 <section class="row">
 
-                    <fieldset class="borderInput">
+                    <section class="col-sm-12">
 
-                        <article class="col-sm-4">
+                        <fieldset class="borderInput">
 
-                            <!-- Label For Letters Choice -->
-                            <label for="checkBoxes">Letter: </label>
-                            <input type="checkbox" id="letterCheckBox" name="lettersChoice" />
 
-                        </article> 
+                            <legend>Character Choices</legend>
 
-                        <!-- Check box for numebrs choice -->
-                        <article class="col-sm-4">
+                            <div class="row">
+                                <article class="col-sm-4">
 
-                            <!-- Label For Numbers Choice -->
-                            <label for="checkBoxes">Number: </label>
-                            <input type="checkbox" id="numbersCheckBox" name="numbersChoice" />
+                                    <!-- Label For Letters Choice -->
+                                    <label for="checkBoxes">Letters </label>
+                                    <input type="checkbox" id="letterCheckBox" name="lettersChoice" />
 
-                        </article>
+                                </article> 
 
-                        <!-- Check box for symbols choice -->
-                        <article class="col-sm-4">
+                                <!-- Check box for numebrs choice -->
+                                <article class="col-sm-4">
 
-                            <!-- Label f or symbols choice -->
-                            <label for="checkBoxes">Symbol: </label>
-                            <input type="checkbox" id="symbolsCheckBox" name="symbolsChoice" />
+                                    <!-- Label For Numbers Choice -->
+                                    <label for="checkBoxes">Numbers </label>
+                                    <input type="checkbox" id="numbersCheckBox" name="numbersChoice" />
 
-                        </article> 
+                                </article>
 
-                    </fieldset>                 
+                                <!-- Check box for symbols choice -->
+                                <article class="col-sm-4">
+
+                                    <!-- Label f or symbols choice -->
+                                    <label for="checkBoxes">Symbols </label>
+                                    <input type="checkbox" id="symbolsCheckBox" name="symbolsChoice" />
+
+                                </article> 
+                            </div>
+
+                        </fieldset>     
+                    </section>            
             
                 </section>
 

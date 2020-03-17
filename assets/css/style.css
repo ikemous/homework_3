@@ -13,6 +13,10 @@ textarea{
     
 }
 
+main{
+    padding-top: 50px;
+}
+
 /* 
     section tag
     Purpose: seperate Each Section
@@ -57,6 +61,13 @@ input[type="checkbox"]
     height:30px; 
     /* Update Width */
     width:30px;
+}
+
+label[for="checkBoxes"]
+{
+    position: absolute;
+    margin-left: 40px;
+    margin-top: 3px;
 }
 
 label[for="passTextBox"]

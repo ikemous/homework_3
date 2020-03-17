@@ -10,8 +10,8 @@ let allChoices;//used to store all choices in one list
 let password;//Password that is generated
 let validInput;//Used To Check pass length input
 let passLength;//Users length for password
-let MIN_LENGTH = 8;//Constant for Minimum password length
-let MAX_LENGTH = 128;//Constant for Maximum password length
+const MIN_LENGTH = 8;//Constant for Minimum password length
+const MAX_LENGTH = 128;//Constant for Maximum password length
 
 //Variables for checkboxes
 let lettersChecked;//For the letters checkbox
