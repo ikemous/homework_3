@@ -135,13 +135,17 @@
 
                     <article class="col-sm-12">
 
+
                         <fieldset class="borderInput">
                             
                             <legend>Desired Length</legend>
                             <!-- Label For Letters Choice -->
-                            <label for="passTextBox">Password Length:</label>
+                            <label for="passLengthTextBox">Length:</label> 
+                            <!-- Label For Errors -->
+                            <label for="lengthErrorLabel" id="lengthErrorLabel"></label>
                             <!-- Textbox to contain user input -->
-                            <input type="text" placeholder="8 and 128 Characters" id="passLengthTextBox" name="passTextBox" />  
+                            <input type="text" class="col-sm-12" placeholder="8-128 characters" id="passLengthTextBox" name="passLengthTextBox" /> 
+                            
 
                         </fieldset>
 

@@ -14,8 +14,6 @@ textarea{
     border: none;
     font-weight: bolder;
     color: black;
-    
-    
 }
 
 body{
@@ -61,8 +59,9 @@ style="height:30px; width:30px;"
 input[type="text"]
 {
     /* Update location of input */
-    padding-left: 130px;
+    padding-left: 60px;
 }
+
 /* 
 style="height:30px; width:30px;"
 */
@@ -81,11 +80,22 @@ label[for="checkBoxes"]
     margin-top: 3px;
 }
 
-label[for="passTextBox"]
+label[for="passLengthTextBox"]
 {
     position:absolute; 
     padding-left: 5px; 
     padding-top: 2px;
+    z-index: 2;
+}
+
+label[for="lengthErrorLabel"]
+{
+    position: absolute; 
+    padding-left: 50px;
+    margin-top: 27px;
+    z-index: 2;
+    color: darkred;
+    font-weight: bold;
 }
 
 legend{

@@ -174,23 +174,31 @@ function randomCharacter()
 function checkNumberInput(length)
 {
 
+    let eLabel = document.getElementById("lengthErrorLabel");
+
     //Checks To See If User Input isn't a number
     if(isNaN(length))
     {
+        //Tell User That They Suck!
+        eLabel.innerHTML = '<i class="fas fa-exclamation-triangle">Input Wasn\'t A Number</i>';
        //Tell User That They Suck!
-       alert("Input Wasn't a number");
     }
     //User Input Is A number
     else if(length >= MIN_LENGTH && length <= MAX_LENGTH)
     {
         //Turn User Input Into A Number
         length = parseInt(length);
+        //Reset error
+        eLabel.innerHTML = "";
         //input is a number
         return true;
     }
-
-    //Tell User they Suck!
-    alert("Input must be between 8 and 128 characters")
+    else
+    {
+        //Tell User That They Suck!
+        eLabel.innerHTML = '<i class="fas fa-exclamation-triangle">Choose Between 8 and 128</i>';
+    }
+    
     
     //input isnt a number
     return false;
