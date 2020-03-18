@@ -1,11 +1,11 @@
 /* 
     textarea tag
     Purpose: Make the text in text area centered 
-            and make text area un-resizeable
+            and change the background with the fonts
 */
 textarea{
 
-    padding-top: 40px;
+    padding-top: 40px; 
     padding-bottom: 40px;
     text-align: center;
     font-size: auto;
@@ -16,12 +16,20 @@ textarea{
     color: black;
 }
 
+/* 
+    body tag
+    Purpose: Change The Background Color Of The 
+              Whole Page
+*/
 body{
     
     background-color: cyan;
 }
 
-
+/* 
+    main tag
+    Purpose: Creates space for the top of the page
+*/
 main{
     padding-top: 50px;
 }
@@ -45,17 +53,6 @@ ul li{
 /* 
 style="height:30px; width:30px;"
 */
-input[type="checkbox"]
-{
-    /* Update Height */
-    height:30px; 
-    /* Update Width */
-    width:30px;
-}
-
-/* 
-style="height:30px; width:30px;"
-*/
 input[type="text"]
 {
     /* Update location of input */
@@ -63,7 +60,8 @@ input[type="text"]
 }
 
 /* 
-style="height:30px; width:30px;"
+    checkbox input types
+    Purpose: Increase checkbox sizes
 */
 input[type="checkbox"]
 {
@@ -73,6 +71,11 @@ input[type="checkbox"]
     width:30px;
 }
 
+/* 
+    Chexkboxes labels
+    Purpose: Change position and margin
+            For The checkbox labels
+*/
 label[for="checkBoxes"]
 {
     position: absolute;
@@ -80,6 +83,11 @@ label[for="checkBoxes"]
     margin-top: 3px;
 }
 
+/*  
+    label for passLengthTextbox
+    Purpose: change position, padding and move
+            The zindex to the front of the page
+*/
 label[for="passLengthTextBox"]
 {
     position:absolute; 
@@ -88,6 +96,11 @@ label[for="passLengthTextBox"]
     z-index: 2;
 }
 
+/* 
+    label for lengthErrorLabel
+    Purpose: Change position and set colors to the
+            Length error message
+*/
 label[for="lengthErrorLabel"]
 {
     position: absolute; 
@@ -98,6 +111,26 @@ label[for="lengthErrorLabel"]
     font-weight: bold;
 }
 
+/* 
+    label for checkBoxError
+    Purpose: Change Position and set colors to the 
+            Checkbox error message
+*/
+label[for="checkBoxError"]
+{
+    position: absolute;
+    margin-top: 27px;
+    z-index: 2;
+    color: darkred;
+    font-weight: bold;
+}
+
+
+/*  
+    legend tag
+    Purpose: Set a background color of the header of the 
+            section
+*/
 legend{
     width: auto;
     background-color: lightblue;
@@ -105,10 +138,18 @@ legend{
     font-weight: bolder;
 }
 
+/*
+    fieldset tag
+    Purpose: change The background of the fieldset tag
+*/
 fieldset{
     background-color: lightcoral;
 }
 
+/* 
+    borderinput Class
+    Purpose: To create a border around a main article
+*/
 .borderInput{
 
     border: 5px solid blue;
@@ -117,9 +158,4 @@ fieldset{
     width:100%;
 }
 
-
-.jumbotron{
-    
-    background-color: cyan;
-}
 

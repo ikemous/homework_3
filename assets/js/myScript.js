@@ -33,6 +33,8 @@ function createPassword()
     //Grab Password Length from the HTML Page
     passLength = document.getElementById("passLengthTextBox").value;
 
+
+
     //Check User Input
     validInput = checkNumberInput(passLength);
 
@@ -46,6 +48,10 @@ function createPassword()
     //Turn String to int
     passLength = parseInt(passLength);
 
+    
+    //Grab the alert 
+    let checkAlert = document.getElementById("checkBoxError");
+
     //Start Generating password
     for(let i = 0; i < passLength; i++)
     {
@@ -56,13 +62,15 @@ function createPassword()
         //Check if character wasnt in any array list
         if(newChar == null)
         {
-            //Tell user they suck!
-            alert("You Need to have at least 1 box checked!!");
             //Tell the User They Suck Again!
-            password = "Please Check at least one box"
+            checkAlert.innerHTML = '<i class="fas fa-exclamation-triangle">Check Ast Least One Box</i>';
+
             //Get Out Of The For Loop
             break;
         }
+
+        //Reset text fof alerts
+        checkAlert.innerHTML = '';
 
         //Add random character to password
         password = password + newChar;
@@ -181,7 +189,6 @@ function checkNumberInput(length)
     {
         //Tell User That They Suck!
         eLabel.innerHTML = '<i class="fas fa-exclamation-triangle">Input Wasn\'t A Number</i>';
-       //Tell User That They Suck!
     }
     //User Input Is A number
     else if(length >= MIN_LENGTH && length <= MAX_LENGTH)
@@ -198,7 +205,6 @@ function checkNumberInput(length)
         //Tell User That They Suck!
         eLabel.innerHTML = '<i class="fas fa-exclamation-triangle">Choose Between 8 and 128</i>';
     }
-    
     
     //input isnt a number
     return false;
